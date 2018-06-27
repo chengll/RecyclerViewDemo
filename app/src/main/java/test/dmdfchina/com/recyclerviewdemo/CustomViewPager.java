@@ -7,6 +7,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
+import android.view.WindowManager;
 
 /**
  * Created by mkt on 2018/6/27.
@@ -46,6 +47,10 @@ public class CustomViewPager extends ViewPager {
 
     public int getScreenWidth(){
         DisplayMetrics displayMetrics=new DisplayMetrics();
+        WindowManager windowManager= (WindowManager) mContext.getSystemService(Context.WINDOW_SERVICE);
+        windowManager.getDefaultDisplay().getWidth();
         return displayMetrics.widthPixels;
     }
+
+
 }
